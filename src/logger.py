@@ -1,7 +1,7 @@
 import logging
 import os
 from datetime import datetime
-from src.exception import CustomException
+#from src.exception import CustomException
 import sys
 
 LOG_FILE=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
@@ -17,11 +17,6 @@ logging.basicConfig(
 
 )
 
-if __name__ == '__main__':
-    try:
-        a = 1/0
-    except Exception as e:
-        logging.info(CustomException(e, sys))
-        raise CustomException(e, sys)
+
         
  
