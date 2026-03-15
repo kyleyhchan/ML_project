@@ -17,6 +17,7 @@ class DataIngestionConfig:
     train_data_path:str = os.path.join('artifacts',"train.csv")
     test_data_path:str = os.path.join('artifacts',"test.csv")
     raw_data_path:str = os.path.join('artifacts',"data.csv")
+    source_data_path:str = os.path.join("notebook", "data", "stud.csv")
 
 
 class DataIngestion:
@@ -26,7 +27,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
-            df = pd.read_csv('/Users/chankyle/Desktop/mlproject/notebook/data/stud.csv')
+            df = pd.read_csv(self.ingestion_config.source_data_path)
             logging.info('Read the dataset as dataframe')
             # First thing to do is to save the raw data into artifacts
 
